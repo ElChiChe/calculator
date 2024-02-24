@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #fff;
+	font-family: "Open Sans", sans-serif;
+}
+
+body {
+	background: #af1111;
+}
+
+.main {
+	background: #0f0f0f;
+	margin: 10px auto;
+	width: 25%;
+	min-width: 320px;
+	height: 500px;
+	border-radius: 12px;
+	display: flex;
+	padding: 15px;
+	align-content: center;
+	flex-direction: column;
+	border: 1px solid #fff8;
+	box-shadow: 5px 10px #0007;
+}
+
+.resultado-div {
+	background: #0009;
+	height: 20%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	border-radius: 12px;
+}
+
+.resultado-div .resultado {
+	font-size: 3rem;
+	width: 100%;
+	padding: 2px;
+	background: #000;
+	border: none;
+	outline: none;
+	text-align: right;
+}
+
+.botones-container {
+	display: flex;
+	justify-content: center;
+	min-height: 320px;
+	gap: 1px;
+}
+
+.botones-div {
+	width: 80%;
+}
+
+.botones-div .cero {
+	width: 53%;
+	min-width: 60px;
+	border-radius: 10px;
+}
+
+.botones-container button {
+	width: 50px;
+	height: 50px;
+	background: #000a;
+	font-size: 20px;
+	border-radius: 50%;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.botones-especiales {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.botones-especiales button {
+	background: #ff8906;
+}
