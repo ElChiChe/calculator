@@ -53,13 +53,14 @@ const getNumber = () => {
 				if(!operator) {
 					resultado_input.value += value_btn;
 					first_number = resultado_input.value;
+					console.log(resultado_input.value);
 				}
-
-				//Si el operador tiene un valor, agregar valor al segundo número :)
 				if(operator) {
-					resultado_input.value += value_btn;
-					second_number = resultado_input.value;
+					resultado_input.value +=  value_btn;
+					second_number = value_btn;
+					console.log(resultado_input.value);
 				}
+				
 
 			}
 			
@@ -68,18 +69,20 @@ const getNumber = () => {
 }
 
 
-//Función para almacenar el operador seleccionado.
-const getOperator = op => {
+// Función para almacenar el operador seleccionado.
+const getOperator = () => {
 	botones_especiales.forEach(btn => {
 		btn.addEventListener("click", e => {
 			if(e.target.textContent !== "=") {
 			let value_btn = e.target.textContent;
-			resultado_input.value = value_btn;
-			operator = resultado_input.value;
-			resultado_input.value = "";
+
+			if(!operator.includes(value_btn)) {
+				operator = value_btn;
+				resultado_input.value += operator;
 			}
-		})
+		}
 	})
+})
 }
 
 
@@ -144,6 +147,7 @@ const calculate = (n1, op, n2) => {
 
 //Función para mostrar el resultado final
 const result = operate => {
+
 	operate.addEventListener("click", () => {
 
 		//Si se hace click en el "=" pero el primer valor
@@ -156,6 +160,7 @@ const result = operate => {
 		//Muestra el resultado en pantalla
 		resultado_input.value = calculate(parseFloat(first_number), operator, parseFloat(second_number));
 
+		console.log(first_number, operator, second_number);
 		//Guardamos el número en pantalla en la variable "resultado".
 		resultado = resultado_input.value;
 
